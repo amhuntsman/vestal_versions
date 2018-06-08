@@ -8,10 +8,6 @@ language: ruby
 matrix:
   allow_failures:
     - rvm: ruby-head
-  include:
-    - env: COVERAGE=1
-      gemfile: Gemfile
-      rvm: 2.4.4
 rvm:
   - 2.4.4
   - ruby-head
