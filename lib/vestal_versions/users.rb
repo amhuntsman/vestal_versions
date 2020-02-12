@@ -28,8 +28,11 @@ module VestalVersions
     included do
       belongs_to :user, :polymorphic => true
 
-      alias_method_chain :user, :name
-      alias_method_chain :user=, :name
+      alias_method :user_without_name, :user
+      alias_method :user, :user_with_name
+
+      alias_method :user_without_name=, :user=
+      alias_method :user=, :user_with_name=
     end
 
     # Overrides the +user+ method created by the polymorphic +belongs_to+ user association. If
